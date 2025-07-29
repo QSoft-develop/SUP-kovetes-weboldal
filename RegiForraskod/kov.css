@@ -1,0 +1,94 @@
+body { 
+	background-color:#ffffff;
+	color: #224;
+        font-family: verdana, sans-serif;
+        font-size: x-small;
+        font-size: small;
+    }
+
+img { border: 0; }
+
+background: #ffffff url("kepek/star-icon.png") top repeat-x;
+
+hr {
+		height: 1px;
+		background-color: #000;
+		color: #000;
+		margin: 1em 0;
+	}
+
+h1, h2{
+		margin: 1em 0 0.2em 0;
+		border-bottom: 1px solid #ccc;
+		font-family: arial, verdana, sans-serif;
+	}
+	
+h3{
+		margin: 1em 0 0.2em 0;
+		border-bottom: 0px solid #ccc;
+		font-family: arial, verdana, sans-serif;
+	}	
+
+a{
+		text-decoration: none;
+		color: #449;
+}
+
+a:hover{
+		text-decoration: none;
+		color: #c20;
+}
+
+#fejlec
+{
+        margin-top:20px;
+        text-align:center;
+        color: #449;
+}
+
+#figyelem
+{
+	text-align:center;
+	background-color:#ffd700;
+        margin-top:20px;
+        margin-left:20px;
+	margin: auto;
+	font-size: 22px;
+	font-family: arial;
+	color: #000;
+	width: 80%;
+	
+}
+
+#program	
+{
+		color: #449;
+        margin: 50px 100px 30px 100px;
+        font-family: arial;
+	
+}	
+
+#programpic	
+{
+	text-align: right;
+        margin: 10px 50px 30px 30px;	
+        font-family: arial;
+	align: right;
+}	
+
+#letolt
+{
+        font-size:1.5em;
+        font-family: arial;
+        margin-left:16px; 
+        border:0px #ddd solid; 
+        background-color:#def
+		text-align:center;
+}
+
+#letolt:hover
+{
+        color: #c20;
+        border:0px #ddd solid; 
+        
+}
