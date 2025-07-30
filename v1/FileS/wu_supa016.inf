@@ -1,0 +1,71 @@
+[DBVer]
+DbSqlCsom=A016
+Title=
+BuildVer=
+BuildDate=
+SetupFileArg=
+SetupFile=
+TargetFile=
+UpdateDir=
+MD5=
+
+[Sup]
+Title=SUP - kvets telept
+BuildVer=16.11.9341.41126
+BuildDate=2025.07.29. 11:27:46
+TargetFile=sup.exe
+SetupFile=SUP_Upd_Setup.exe
+SetupFileArg=/silent /tasks=webupdate
+UpdateDir=..\Update
+Required=False
+MD5=45F58A7AD11AC25568A041E39359FB92
+Action=ExecSetup
+
+[MerlegElemzes]
+Title=Mrleg s Elemzs - kvets telept
+BuildVer=16.11.9341.34614
+BuildDate=2025.07.29. 09:38:26
+TargetFile=amerleg.exe
+SetupFile=LM_Upd_Setup.exe
+SetupFileArg=/silent /tasks=webupdate
+UpdateDir=..\Update
+Required=False
+MD5=8DE73219D3CAA55C57BA0BA64B75B4CB
+Action=ExecSetup
+
+[Raktar]
+Title=Raktr - kvets telept
+BuildVer=16.11.9335.58734
+BuildDate=2025.07.22. 16:20:54
+TargetFile=SUPRA.exe
+SetupFile=RA_Upd_Setup.exe
+SetupFileArg=/silent /tasks=webupdate
+UpdateDir=..\Update
+Required=False
+MD5=F069AF31078A7D5C64A463F7F4E99D09
+Action=ExecSetup
+
+[TIP]
+Title=TIP - kvets telept
+BuildVer=16.11.9335.38874
+BuildDate=2025.07.23. 10:50:20
+TargetFile=TIP.exe
+SetupFile=TIP_Upd_Setup.exe
+SetupFileArg=/silent /tasks=webupdate
+UpdateDir=..\Update
+Required=False
+MD5=C37206BE4589D53ADFEF1B906D626935
+Action=ExecSetup
+
+[WebUpdate]
+Title=Internetes frissts
+BuildVer=16.6.8851.38885
+BuildDate=2024.03.26. 10:50:14
+TargetFile=WebUpdate.exe
+SetupFile=WebUpdate.exe
+SetupFileArg=
+UpdateDir=.\Update
+Required=False
+MD5=FFA9784CB66BB8F5C73A7E86F382933D
+Action=FileCopyAndExit
+

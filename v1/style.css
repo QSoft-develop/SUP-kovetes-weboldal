@@ -1,0 +1,107 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #003;
+}
+
+header {
+  background-color: #ddeeff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header img {
+  height: 80px;
+}
+
+footer {
+  background-color: #ddeeff;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 40px;
+}
+
+#tiles {
+  width: 80%;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.tile {
+  background-color: #fff;
+  border: 1px solid #ccddee;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tile img {
+  width: 100%;
+  height: auto;
+}
+
+.tile .title {
+  margin-top: 10px;
+}
+
+.tile.large {
+  font-size: 1.1em;
+}
+
+.details {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.details-content {
+  background: #fff;
+  padding: 20px 30px;
+  border: 1px solid #ccddee;
+  max-width: 500px;
+}
+
+.modal-img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.details-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.details-content td {
+  padding: 4px 8px;
+  border-bottom: 1px solid #eef;
+}
+
+.details-content td:first-child {
+  width: 40%;
+  font-weight: bold;
+  text-align: right;
+}
+
+.close {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.close button {
+  padding: 6px 12px;
+  font-size: 1em;
+}
