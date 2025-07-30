@@ -41,6 +41,13 @@ window.addEventListener('keydown', function(e){
 <header>
   <img src="<?php echo $imgBase; ?>suplogo.jpg" alt="SUP logo">
 </header>
+<div id="figyelem">
+  Figyelem!!! A követéseket csak
+  <b><a href="https://dl.sup.hu/dl/?file=supa016iso">A016</a></b>
+  -s adatbázisverzióhoz telepítse fel!<br>
+  (Csak az adatbázis teljes mentése és a
+  <b>2019. szeptember 4</b>-i követés CD telepítése után!!!)
+</div>
 <div id="tiles">
 <?php foreach($modules as $m): ?>
   <div class="tile<?php echo $m['row']==1?' large':''; ?>" onclick="showDetails('<?php echo $m['id']; ?>')">
@@ -48,6 +55,11 @@ window.addEventListener('keydown', function(e){
     <div class="title"><?php echo $m['name']; ?></div>
   </div>
 <?php endforeach; ?>
+  <div class="tile">
+    <a href="https://aral.qsoft.hu/d/d11f48cbc61548619ad0/">
+      <img src="<?php echo $imgBase; ?>Blue32x32.png" alt="blue link">
+    </a>
+  </div>
 </div>
 <?php foreach($modules as $m): $verfile = in_array($m['id'], ['XLS','FIREBIRD','QSBACKUPFDBSERVICE','RUSTDESK','DBCONNECTORAPI']) ? 'sup_fix.ver' : 'sup.ver'; ?>
 <div id="d_<?php echo $m['id']; ?>" class="details" onclick="hideDetails('d_<?php echo $m['id']; ?>')">
