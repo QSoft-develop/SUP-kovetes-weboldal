@@ -8,6 +8,7 @@ A jelenlegi weboldal [sup.hu/kov](https://www.sup.hu/kov) ami design tekintetéb
 - kizárólag desktop felületen használatos design, a mostanában elterjedt full-hd felbontásra optomalitálva.
 
 - A jelenlegi weboldalon használt php scriptek megörzése, vagy korszerűsítése. Fontos, hogy a verziókat leíró adatok formátuma és kiolvasása ne változzon. Más szóval az átmeneti időszakban a két felület egyszerre tudjon működni.
+  - Az "RegiForraskod" könyvtárban található php segédfüggvények be vannak vonva az új `index.php` oldalba, így továbbra is ugyanazok a verzióinformációk kerülnek kiolvasásra.
 
 - A desig lényege a Microsoft által régebben favorizált "csempés" felület.  
   - Legyen fejléc és logo a régihez hasonló módon, csak szebben.  
