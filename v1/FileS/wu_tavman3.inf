@@ -1,0 +1,34 @@
+[DBVer]
+Title=
+BuildVer=
+BuildDate=
+SetupFileArg=
+SetupFile=
+TargetFile=
+UpdateDir=
+MD5=
+
+[Tavman3]
+Title=Tvmenedzsels 3
+BuildVer=16.0.8510.33007
+BuildDate=2023.04.20. 09:50:58
+TargetFile=Tavman3.exe
+SetupFile=Tavman3_Setup.exe
+SetupFileArg=_QS_PATH_ /silent
+UpdateDir=.\Update
+Required=False
+MD5=1F48978F4C2323E32CEC9CC3D633D2B2
+Action=ExecSetup
+
+[WebUpdate]
+Title=Internetes frissts
+BuildVer=16.6.8851.38885
+BuildDate=2024.03.26. 10:50:14
+TargetFile=WebUpdate.exe
+SetupFile=WebUpdate.exe
+SetupFileArg=
+UpdateDir=.\Update
+Required=False
+MD5=FFA9784CB66BB8F5C73A7E86F382933D
+Action=FileCopyAndExit
+
