@@ -28,6 +28,20 @@ function module_files($code) {
         default: return '';
     }
 }
+
+$modules = [
+    'SUP' => ['name' => 'SUP', 'desc' => 'Pénzügyi és számviteli modul', 'icon' => 'sup.jpg', 'color' => '#0078d7'],
+    'RAKTAR' => ['name' => 'Raktár', 'desc' => 'Raktári készlet és áruforgalmi modul', 'icon' => 'raktar.jpg', 'color' => '#008272'],
+    'MERLEG' => ['name' => 'Mérleg', 'desc' => 'Mérleg és elemzés modul', 'icon' => 'merleg.jpg', 'color' => '#ff8c00'],
+    'TIP' => ['name' => 'TIP', 'desc' => 'Titkársági Programcsomag', 'icon' => 'tip.jpg', 'color' => '#68217a'],
+    'XLS' => ['name' => 'SUP Xls.NET', 'desc' => 'XLS.NET függvénycsomag', 'icon' => 'xls.jpg', 'color' => '#1b6ac6'],
+    'DBCONNECTOR' => ['name' => 'DbConnector', 'desc' => 'Ütemezett feladatok', 'icon' => 'dbconnector.jpg', 'color' => '#00cc6a'],
+    'DBCONNECTORAPI' => ['name' => 'DbConnector API', 'desc' => 'DbConnector API', 'icon' => 'dbconnectorapi.jpg', 'color' => '#e81123'],
+    'QSBACKUPFDBSERVICE' => ['name' => 'QsFdbBackupService', 'desc' => 'Adatbázismentő', 'icon' => 'qsfdb.png', 'color' => '#0099bc'],
+    'RUSTDESK' => ['name' => 'RustDesk', 'desc' => 'Távmenedzselés', 'icon' => 'tavman.jpg', 'color' => '#da3b01'],
+    'FIREBIRD' => ['name' => 'Firebird SQL', 'desc' => 'Firebird adatbáziskezelő', 'icon' => 'firebird.jpg', 'color' => '#ffb900'],
+    'WEBUPDATE' => ['name' => 'WebUpdate', 'desc' => 'Internetes frissítés', 'icon' => 'webupdate.jpg', 'color' => '#2166b5']
+];
 ?>
 <!DOCTYPE html>
 <html lang="hu">
@@ -43,89 +57,17 @@ function module_files($code) {
     <h1>SUP követés letöltések</h1>
 </header>
 <main>
-    <section class="tiles-row large">
-        <?php list($v,$d,$s)=get_ver_info('SUP'); ?>
-        <a href="RegiForraskod/FileS/<?php echo module_files('SUP'); ?>" class="tile" data-name="SUP" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo module_files('SUP'); ?>">
-            <img src="RegiForraskod/kepek/sup.jpg" alt="SUP">
-            <span class="name">SUP</span>
-            <span class="version"><?php echo $v; ?></span>
-            <span class="date"><?php echo $d; ?></span>
-        </a>
-        <?php list($v,$d,$s)=get_ver_info('RAKTAR'); ?>
-        <a href="RegiForraskod/FileS/<?php echo module_files('RAKTAR'); ?>" class="tile" data-name="Raktár" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo module_files('RAKTAR'); ?>">
-            <img src="RegiForraskod/kepek/raktar.jpg" alt="Raktár">
-            <span class="name">Raktár</span>
-            <span class="version"><?php echo $v; ?></span>
-            <span class="date"><?php echo $d; ?></span>
-        </a>
-        <?php list($v,$d,$s)=get_ver_info('MERLEG'); ?>
-        <a href="RegiForraskod/FileS/<?php echo module_files('MERLEG'); ?>" class="tile" data-name="Mérleg" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo module_files('MERLEG'); ?>">
-            <img src="RegiForraskod/kepek/merleg.jpg" alt="Mérleg">
-            <span class="name">Mérleg</span>
-            <span class="version"><?php echo $v; ?></span>
-            <span class="date"><?php echo $d; ?></span>
-        </a>
-        <?php list($v,$d,$s)=get_ver_info('TIP'); ?>
-        <a href="RegiForraskod/FileS/<?php echo module_files('TIP'); ?>" class="tile" data-name="TIP" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo module_files('TIP'); ?>">
-            <img src="RegiForraskod/kepek/tip.jpg" alt="TIP">
-            <span class="name">TIP</span>
-            <span class="version"><?php echo $v; ?></span>
-            <span class="date"><?php echo $d; ?></span>
-        </a>
-    </section>
-    <section class="tiles-row">
-        <?php list($v,$d,$s)=get_ver_info('XLS'); ?>
-        <a href="RegiForraskod/FileS/<?php echo module_files('XLS'); ?>" class="tile" data-name="SUP Xls.NET" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo module_files('XLS'); ?>">
-            <img src="RegiForraskod/kepek/xls.jpg" alt="XLS">
-            <span class="name">SUP Xls.NET</span>
-            <span class="version"><?php echo $v; ?></span>
-            <span class="date"><?php echo $d; ?></span>
-        </a>
-        <?php list($v,$d,$s)=get_ver_info('DBCONNECTOR'); ?>
-        <a href="RegiForraskod/FileS/<?php echo module_files('DBCONNECTOR'); ?>" class="tile" data-name="DbConnector" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo module_files('DBCONNECTOR'); ?>">
-            <img src="RegiForraskod/kepek/dbconnector.jpg" alt="DbConnector">
-            <span class="name">DbConnector</span>
-            <span class="version"><?php echo $v; ?></span>
-            <span class="date"><?php echo $d; ?></span>
-        </a>
-        <?php list($v,$d,$s)=get_ver_info('DBCONNECTORAPI'); ?>
-        <a href="RegiForraskod/FileS/<?php echo module_files('DBCONNECTORAPI'); ?>" class="tile" data-name="DbConnector API" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo module_files('DBCONNECTORAPI'); ?>">
-            <img src="RegiForraskod/kepek/dbconnectorapi.jpg" alt="DbConnector API">
-            <span class="name">DbConnector API</span>
-            <span class="version"><?php echo $v; ?></span>
-            <span class="date"><?php echo $d; ?></span>
-        </a>
-        <?php list($v,$d,$s)=get_ver_info('QSBACKUPFDBSERVICE'); ?>
-        <a href="RegiForraskod/FileS/<?php echo module_files('QSBACKUPFDBSERVICE'); ?>" class="tile" data-name="QsFdbBackupService" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo module_files('QSBACKUPFDBSERVICE'); ?>">
-            <img src="RegiForraskod/kepek/qsfdb.png" alt="QsFdbBackupService">
-            <span class="name">QsFdbBackupService</span>
-            <span class="version"><?php echo $v; ?></span>
-            <span class="date"><?php echo $d; ?></span>
-        </a>
-    </section>
-    <section class="tiles-row">
-        <?php list($v,$d,$s)=get_ver_info('RUSTDESK'); ?>
-        <a href="RegiForraskod/FileS/<?php echo module_files('RUSTDESK'); ?>" class="tile" data-name="RustDesk" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo module_files('RUSTDESK'); ?>">
-            <img src="RegiForraskod/kepek/tavman.jpg" alt="RustDesk">
-            <span class="name">RustDesk</span>
-            <span class="version"><?php echo $v; ?></span>
-            <span class="date"><?php echo $d; ?></span>
-        </a>
-        <?php list($v,$d,$s)=get_ver_info('FIREBIRD'); ?>
-        <a href="RegiForraskod/FileS/<?php echo module_files('FIREBIRD'); ?>" class="tile" data-name="Firebird SQL" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo module_files('FIREBIRD'); ?>">
-            <img src="RegiForraskod/kepek/firebird.jpg" alt="Firebird">
-            <span class="name">Firebird SQL</span>
-            <span class="version"><?php echo $v; ?></span>
-            <span class="date"><?php echo $d; ?></span>
-        </a>
-        <?php list($v,$d,$s)=get_ver_info('WEBUPDATE'); ?>
-        <a href="RegiForraskod/FileS/<?php echo module_files('WEBUPDATE'); ?>" class="tile" data-name="WebUpdate" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo module_files('WEBUPDATE'); ?>">
-            <img src="RegiForraskod/kepek/webupdate.jpg" alt="WebUpdate">
-            <span class="name">WebUpdate</span>
-            <span class="version"><?php echo $v; ?></span>
-            <span class="date"><?php echo $d; ?></span>
-        </a>
-    </section>
+    <div class="grid">
+        <?php foreach($modules as $code => $info): list($v,$d,$s)=get_ver_info($code); $file = module_files($code); ?>
+        <div class="tile" style="--tile-color:<?php echo $info['color']; ?>" data-name="<?php echo $info['name']; ?>" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo $file; ?>" data-href="RegiForraskod/FileS/<?php echo $file; ?>">
+            <img src="RegiForraskod/kepek/<?php echo $info['icon']; ?>" alt="<?php echo $info['name']; ?>">
+            <span class="name"><?php echo $info['name']; ?></span>
+            <span class="desc"><?php echo $info['desc']; ?></span>
+            <span class="version">v<?php echo $v; ?></span>
+            <a class="download-btn" href="RegiForraskod/FileS/<?php echo $file; ?>">Letöltés</a>
+        </div>
+        <?php endforeach; ?>
+    </div>
 </main>
 <div id="modal" class="modal">
     <div class="modal-content">
