@@ -1,13 +1,13 @@
 document.querySelectorAll('.tile').forEach(tile => {
     tile.addEventListener('click', e => {
-        e.preventDefault();
+        if (e.target.closest('.download-btn')) return;
         const modal = document.getElementById('modal');
         modal.querySelector('.modal-title').textContent = tile.dataset.name;
         modal.querySelector('.modal-file').textContent = tile.dataset.file;
         modal.querySelector('.modal-version').textContent = tile.dataset.version;
         modal.querySelector('.modal-date').textContent = tile.dataset.date;
         modal.querySelector('.modal-size').textContent = tile.dataset.size;
-        modal.querySelector('.modal-download').href = tile.href;
+        modal.querySelector('.modal-download').href = tile.dataset.href;
         modal.classList.add('open');
     });
 });

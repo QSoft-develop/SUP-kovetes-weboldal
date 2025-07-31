@@ -26,3 +26,5 @@ File neve, Verzió, Feltöltés (kiadás) dátuma, Letöltési méret...
 - A kiválasztott csempe doboza mellé kattintva (vagy Esc gombot nyomva) a letöltés részleteit mutató doboz bezáródik, és visszaáll az alap állapot.
 
 - A weboldal nem használ cookie-kat, ezért ezzel kapcsolatos figyelmeztetés sem szükséges.
+
+Az aktuális verzió a csempés felületet modern, Windows 8/10 "Metro" stílusú megjelenéssel valósítja meg. A csempék színesek, lekerekítettek és reszponzívan rendeződnek rácsba.
