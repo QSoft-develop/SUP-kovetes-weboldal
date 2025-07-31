@@ -254,3 +254,45 @@ footer a {
         margin-bottom: 10px;
     }
 }
+
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1200;
+}
+
+.toast {
+    background: #dff6dd;
+    border-left: 4px solid #107c10;
+    color: #107c10;
+    padding: 10px 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    animation: fadeInToast 0.3s forwards;
+}
+
+.toast.hide {
+    animation: fadeOutToast 0.3s forwards;
+}
+
+@keyframes fadeInToast {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutToast {
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
