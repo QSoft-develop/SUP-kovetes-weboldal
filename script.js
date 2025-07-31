@@ -3,7 +3,7 @@ document.querySelectorAll('.tile').forEach(tile => {
     detailsBtn.addEventListener('click', e => {
         e.preventDefault();
         const modal = document.getElementById('modal');
-        modal.querySelector('.modal-title').textContent = tile.dataset.name;
+        modal.querySelector('.modal-title').textContent = tile.querySelector('.name').textContent.trim();
         modal.querySelector('.modal-file').textContent = tile.dataset.file;
         modal.querySelector('.modal-version').textContent = tile.dataset.version;
         modal.querySelector('.modal-date').textContent = tile.dataset.date;
