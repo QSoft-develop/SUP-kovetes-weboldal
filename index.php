@@ -42,6 +42,12 @@ $modules = [
     'FIREBIRD' => ['name' => 'Firebird SQL', 'desc' => 'Firebird adatbáziskezelő', 'icon' => 'firebird.jpg', 'color' => '#ffb900'],
     'WEBUPDATE' => ['name' => 'WebUpdate', 'desc' => 'Internetes frissítés', 'icon' => 'webupdate.jpg', 'color' => '#2166b5']
 ];
+
+$rows = [
+    'large1' => ['SUP'],
+    'large2' => ['RAKTAR', 'MERLEG', 'TIP'],
+    'small'  => ['XLS', 'DBCONNECTOR', 'DBCONNECTORAPI', 'QSBACKUPFDBSERVICE', 'RUSTDESK', 'FIREBIRD', 'WEBUPDATE']
+];
 ?>
 <!DOCTYPE html>
 <html lang="hu">
@@ -57,8 +63,30 @@ $modules = [
     <h1>SUP követés letöltések</h1>
 </header>
 <main>
-    <div class="grid">
-        <?php foreach($modules as $code => $info): list($v,$d,$s)=get_ver_info($code); $file = module_files($code); ?>
+    <div class="grid grid-large">
+        <?php foreach($rows['large1'] as $code): $info = $modules[$code]; list($v,$d,$s)=get_ver_info($code); $file = module_files($code); ?>
+        <div class="tile" style="--tile-color:<?php echo $info['color']; ?>" data-name="<?php echo $info['name']; ?>" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo $file; ?>" data-href="RegiForraskod/FileS/<?php echo $file; ?>">
+            <img src="RegiForraskod/kepek/<?php echo $info['icon']; ?>" alt="<?php echo $info['name']; ?>">
+            <span class="name"><?php echo $info['name']; ?></span>
+            <span class="desc"><?php echo $info['desc']; ?></span>
+            <span class="version">v<?php echo $v; ?></span>
+            <a class="download-btn" href="RegiForraskod/FileS/<?php echo $file; ?>">Letöltés</a>
+        </div>
+        <?php endforeach; ?>
+    </div>
+    <div class="grid grid-large">
+        <?php foreach($rows['large2'] as $code): $info = $modules[$code]; list($v,$d,$s)=get_ver_info($code); $file = module_files($code); ?>
+        <div class="tile" style="--tile-color:<?php echo $info['color']; ?>" data-name="<?php echo $info['name']; ?>" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo $file; ?>" data-href="RegiForraskod/FileS/<?php echo $file; ?>">
+            <img src="RegiForraskod/kepek/<?php echo $info['icon']; ?>" alt="<?php echo $info['name']; ?>">
+            <span class="name"><?php echo $info['name']; ?></span>
+            <span class="desc"><?php echo $info['desc']; ?></span>
+            <span class="version">v<?php echo $v; ?></span>
+            <a class="download-btn" href="RegiForraskod/FileS/<?php echo $file; ?>">Letöltés</a>
+        </div>
+        <?php endforeach; ?>
+    </div>
+    <div class="grid grid-small">
+        <?php foreach($rows['small'] as $code): $info = $modules[$code]; list($v,$d,$s)=get_ver_info($code); $file = module_files($code); ?>
         <div class="tile" style="--tile-color:<?php echo $info['color']; ?>" data-name="<?php echo $info['name']; ?>" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo $file; ?>" data-href="RegiForraskod/FileS/<?php echo $file; ?>">
             <img src="RegiForraskod/kepek/<?php echo $info['icon']; ?>" alt="<?php echo $info['name']; ?>">
             <span class="name"><?php echo $info['name']; ?></span>
