@@ -186,6 +186,11 @@ footer a {
     margin: 8px 0;
 }
 
+.modal-details {
+    margin: 8px 0;
+    padding-left: 20px;
+}
+
 .modal-content .close {
     position: absolute;
     top: 15px;

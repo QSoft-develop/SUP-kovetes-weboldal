@@ -92,10 +92,12 @@ $all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
     <div class="modal-content">
         <span id="modal-close" class="close">&times;</span>
         <h2 class="modal-title"></h2>
-        <p>File: <span class="modal-file"></span></p>
-        <p>Verzió: <span class="modal-version"></span></p>
-        <p>Dátum: <span class="modal-date"></span></p>
-        <p>Méret: <span class="modal-size"></span></p>
+        <ul class="modal-details">
+            <li>File: <span class="modal-file"></span></li>
+            <li>Verzió: <span class="modal-version"></span></li>
+            <li>Dátum: <span class="modal-date"></span></li>
+            <li>Méret: <span class="modal-size"></span></li>
+        </ul>
         <div class="modal-buttons">
             <a class="modal-download" href="#">Letöltés</a>
         </div>
