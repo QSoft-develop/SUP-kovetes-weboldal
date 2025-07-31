@@ -60,9 +60,10 @@ $all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
 </head>
 <body>
 <header>
+    <h1>SUP követés letöltések</h1>
+    <img src="kepek/suplogo.jpg" alt="SUP logo" class="logo">
 </header>
 <main>
-    <img src="kepek/suplogo.jpg" alt="SUP logo" class="hero-logo">
     <div class="grid">
         <?php foreach($all_modules as $code):
             if($code === 'SUP') {

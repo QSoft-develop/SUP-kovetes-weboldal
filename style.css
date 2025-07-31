@@ -8,7 +8,7 @@
 body {
     margin: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
+    background: #fff;
     color: var(--text-color);
     min-height: 100vh;
     display: flex;
@@ -16,17 +16,17 @@ body {
 }
 
 header {
-    background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
+    background: #fff;
     color: #000;
     padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 header .logo {
-    height: 80px;
-    margin-right: 20px;
+    height: 60px;
+    margin-left: 20px;
 }
 
 header h1 {
@@ -34,11 +34,6 @@ header h1 {
     font-size: 1.8em;
 }
 
-.hero-logo {
-    display: block;
-    height: 200px;
-    margin: 40px auto;
-}
 
 
 main {
