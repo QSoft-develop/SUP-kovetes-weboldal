@@ -84,7 +84,7 @@ include("qsVersion.php");
 	   Figyelem!!! A követéseket csak <b><a href="https://dl.sup.hu/dl/?file=supa016iso">A016</a></b>-s adatbázisverzióhoz telepítse fel! <br>
 	   (Csak az adatbázis teljes mentése és a <b>2019. szeptember 4</b>-i követés CD telepítése után!!!) 
 	</div>
-<br><img src="kepek/suplogo.jpg">
+<br><img src="kepek/suplogo.png">
 </div> 
 <br>
 <br>
