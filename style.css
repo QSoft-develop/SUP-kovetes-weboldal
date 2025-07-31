@@ -53,6 +53,13 @@ main {
     }
 }
 
+.section-title {
+    grid-column: 1 / -1;
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: var(--header-bg);
+}
+
 .tile {
     background: #fff;
     border-radius: 10px;
