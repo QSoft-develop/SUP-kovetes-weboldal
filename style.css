@@ -41,7 +41,7 @@ main {
     margin: 0 auto;
     padding: 20px;
     flex: 1;
-    background: #fff;
+    background: transparent;
 }
 
 .grid {
