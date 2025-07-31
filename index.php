@@ -95,7 +95,7 @@ $all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
         <ul class="modal-details">
             <li>File: <span class="modal-file"></span></li>
             <li>Verzió: <span class="modal-version"></span></li>
-            <li>Dátum: <span class="modal-date"></span></li>
+            <li>A feltöltés dátuma: <span class="modal-date"></span></li>
             <li>Méret: <span class="modal-size"></span></li>
         </ul>
         <div class="modal-buttons">
