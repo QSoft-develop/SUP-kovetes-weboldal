@@ -61,7 +61,7 @@ $all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
 <body>
 <header>
     <h1>SUP követés letöltések</h1>
-    <img src="kepek/suplogo.jpg" alt="SUP logo" class="logo">
+    <img src="kepek/suplogo.png" alt="SUP logo" class="logo">
 </header>
 <main>
     <div class="grid">
