@@ -64,13 +64,6 @@ $all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
     <h1>SUP követés letöltések</h1>
 </header>
 <main>
-    <div class="hero">
-        <img src="RegiForraskod/kepek/letolteshatter.jpg" alt="Kiemelt frissítés">
-        <div class="hero-text">
-            <h2>Kiemelt frissítés</h2>
-            <p>Frissítse rendszerét a legújabb verzióra!</p>
-        </div>
-    </div>
     <div class="grid">
         <?php foreach($all_modules as $code): $info = $modules[$code]; list($v,$d,$s)=get_ver_info($code); $file = module_files($code); ?>
         <div class="tile" style="--tile-color:<?php echo $info['color']; ?>" data-name="<?php echo $info['name']; ?>" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo $file; ?>" data-href="RegiForraskod/FileS/<?php echo $file; ?>">

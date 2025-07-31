@@ -33,25 +33,6 @@ header h1 {
     font-size: 1.8em;
 }
 
-.hero {
-    display: flex;
-    align-items: center;
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-bottom: 30px;
-}
-
-.hero img {
-    width: 250px;
-    height: auto;
-    object-fit: cover;
-}
-
-.hero-text {
-    padding: 20px;
-}
 
 main {
     width: 95%;
@@ -210,12 +191,5 @@ footer a {
     }
     header .logo {
         margin-bottom: 10px;
-    }
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero img {
-        width: 100%;
     }
 }
