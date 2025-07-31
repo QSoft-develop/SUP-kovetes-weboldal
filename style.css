@@ -37,8 +37,19 @@ main {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
+}
+
+.grid-small {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.grid-large {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.grid + .grid {
+    margin-top: 20px;
 }
 
 .tile {

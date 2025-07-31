@@ -13,9 +13,7 @@ A jelenlegi weboldal [sup.hu/kov](https://www.sup.hu/kov) ami design tekintetéb
 - A desig lényege a Microsoft által régebben favorizált "csempés" felület.  
   - Legyen fejléc és logo a régihez hasonló módon, csak szebben.  
   - Legyen lábléc a szokások copyright-nak és néhány linknek a fő weboldalra és a Facebook oldalra.  
-  - A középső részen lesznek a csempék, két sorban. Az első sor (nagyobb méretben) a négy legfontosabb modul letöltési hivatkozás (SUP, Raktár, Mérleg, TIP)  
-  a második sor kisebb betűkkel a további modulok (SUP Xls.NET, DbConnector, DbConnector API, QsFdbBackupService)  
-  - Harmadik sorban az egyéb kiegészítő szoftverek (RustDesk, Firebird SQL, WebUpdate)
+  - A középső részen három sorban rendeződnek a csempék. Az első két sorban nagyobb, dupla szélességű csempéken jelenik meg a négy legfontosabb modul (SUP, Raktár, Mérleg, TIP). A harmadik sorban kisebb csempéken láthatók a további modulok és kiegészítő szoftverek (SUP Xls.NET, DbConnector, DbConnector API, QsFdbBackupService, RustDesk, Firebird SQL, WebUpdate).
 
 - A csempék tartalma a fix szöveg mellet a PHP kóddal kiolvasott adatokat tartalmazza. Pontosabban a csempe szöveg csak a modul/szoftver nevét verzió kiadási dátumot.  
 
