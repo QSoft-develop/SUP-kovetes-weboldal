@@ -65,6 +65,10 @@ $all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
 </header>
 <main>
     <div class="grid">
+        <div class="alert-toast">
+            <p>Figyelem!!! A követéseket csak <a href="https://dl.sup.hu/dl/?file=supa016iso">A016</a>-s adatbázisverzióhoz telepítse fel!<br>
+            (Csak az adatbázis teljes mentése és a 2019. szeptember 4-i követés CD telepítése után!!!)</p>
+        </div>
         <?php foreach($all_modules as $code):
             if($code === 'SUP') {
         ?>
