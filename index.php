@@ -55,6 +55,7 @@ $all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
 <head>
 <meta charset="utf-8">
 <title>SUP követés letöltések</title>
+<link rel="icon" href="kepek/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="style.css">
 <script src="script.js" defer></script>
 </head>
