@@ -62,7 +62,7 @@ $all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
 <header>
 </header>
 <main>
-    <img src="RegiForraskod/kepek/suplogo.jpg" alt="SUP logo" class="hero-logo">
+    <img src="kepek/suplogo.jpg" alt="SUP logo" class="hero-logo">
     <div class="grid">
         <?php foreach($all_modules as $code):
             if($code === 'SUP') {
@@ -76,7 +76,7 @@ $all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
             $file = module_files($code);
         ?>
         <div class="tile" style="--tile-color:<?php echo $info['color']; ?>" data-name="<?php echo $info['name']; ?>" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo $file; ?>" data-href="RegiForraskod/FileS/<?php echo $file; ?>">
-            <img src="RegiForraskod/kepek/<?php echo $info['icon']; ?>" alt="<?php echo $info['name']; ?>">
+            <img src="kepek/<?php echo $info['icon']; ?>" alt="<?php echo $info['name']; ?>">
             <span class="name"><?php echo $info['name']; ?></span>
             <span class="version"><?php echo $d; ?></span>
             <div class="actions">
