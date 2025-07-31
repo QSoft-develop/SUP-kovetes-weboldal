@@ -89,7 +89,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 10px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: transform 0.2s, box-shadow 0.2s;
@@ -121,7 +122,7 @@ main {
 
 .tile .version {
     font-size: 0.9em;
-    margin-top: 5px;
+    margin-top: 2px;
 }
 
 .tile .actions {
