@@ -10,13 +10,40 @@ document.querySelectorAll('.tile').forEach(tile => {
         modal.classList.add('open');
     });
 });
+
 const modal = document.getElementById('modal');
-document.getElementById('modal-close').addEventListener('click', ()=>{
+const downloadBtn = modal.querySelector('.modal-download');
+const toastDuration = 5000;
+let toastContainer = document.getElementById('toast-container');
+
+if (!toastContainer) {
+    toastContainer = document.createElement('div');
+    toastContainer.id = 'toast-container';
+    document.body.appendChild(toastContainer);
+}
+
+function showToast(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = message;
+    toastContainer.appendChild(toast);
+    setTimeout(() => {
+        toast.classList.add('hide');
+        toast.addEventListener('animationend', () => toast.remove());
+    }, toastDuration);
+}
+
+downloadBtn.addEventListener('click', () => {
+    modal.classList.remove('open');
+    showToast('Letöltés alatt.');
+});
+
+document.getElementById('modal-close').addEventListener('click', () => {
     modal.classList.remove('open');
 });
 modal.addEventListener('click', e => {
-    if(e.target === modal) modal.classList.remove('open');
+    if (e.target === modal) modal.classList.remove('open');
 });
 document.addEventListener('keydown', e => {
-    if(e.key === 'Escape') modal.classList.remove('open');
+    if (e.key === 'Escape') modal.classList.remove('open');
 });
