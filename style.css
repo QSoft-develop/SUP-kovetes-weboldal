@@ -41,7 +41,7 @@ main {
     margin: 0 auto;
     padding: 20px;
     flex: 1;
-    background: linear-gradient(180deg, var(--bg-gradient-start) 4%, var(--bg-gradient-end) 100%);
+    background: #fff;
 }
 
 .grid {
