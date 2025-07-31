@@ -1,14 +1,14 @@
 <?php
-require_once __DIR__.'/RegiForraskod/qsVersion.php';
+require_once __DIR__.'/qsVersion.php';
 
 function get_ver_info($code) {
     $fix_codes = array('XLS','FIREBIRD','QSBACKUPFDBSERVICE','RUSTDESK','DBCONNECTORAPI');
     $file = in_array($code, $fix_codes) ? 'sup_fix.ver' : 'sup.ver';
-    $path = __DIR__."/RegiForraskod/{$file}";
+    $path = __DIR__."/{$file}";
     return array(
         qsGetVersion($path, $code),
         qsGetDate($path, $code),
-        qsGetFileSize(__DIR__.'/RegiForraskod/FileS/'.module_files($code))
+        qsGetFileSize(__DIR__.'/FileS/'.module_files($code))
     );
 }
 
@@ -80,7 +80,7 @@ $all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
             list($v,$d,$s) = get_ver_info($code);
             $file = module_files($code);
         ?>
-        <div class="tile" style="--tile-color:<?php echo $info['color']; ?>" data-name="<?php echo $info['name']; ?>" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo $file; ?>" data-href="RegiForraskod/FileS/<?php echo $file; ?>">
+        <div class="tile" style="--tile-color:<?php echo $info['color']; ?>" data-name="<?php echo $info['name']; ?>" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo $file; ?>" data-href="FileS/<?php echo $file; ?>">
             <img src="kepek/<?php echo $info['icon']; ?>" alt="<?php echo $info['name']; ?>">
             <span class="name"><?php echo $info['name']; ?></span>
             <span class="version"><?php echo $d; ?></span>
