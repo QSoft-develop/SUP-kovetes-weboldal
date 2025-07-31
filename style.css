@@ -1,6 +1,7 @@
 :root {
-    --bg-gradient-start: #ffffff;
-    --bg-gradient-end: #2564cf;
+    /* Gradient colors for the page background */
+    --bg-gradient-start: #f5f5f5;
+    --bg-gradient-end: #e0e0e0;
     --header-bg: #2564cf;
     --text-color: #333;
 }
@@ -8,7 +9,8 @@
 body {
     margin: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: #fff;
+    /* Light gradient background to make tiles stand out */
+    background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
     color: var(--text-color);
     min-height: 100vh;
     display: flex;
@@ -41,7 +43,8 @@ main {
     margin: 0 auto;
     padding: 20px;
     flex: 1;
-    background: #fff;
+    /* Transparent so the body gradient is visible */
+    background: transparent;
 }
 
 .grid {
