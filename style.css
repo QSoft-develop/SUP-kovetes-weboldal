@@ -10,6 +10,9 @@ body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
     color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -54,6 +57,7 @@ main {
     width: 95%;
     margin: 0 auto;
     padding: 20px;
+    flex: 1;
 }
 
 .grid {
