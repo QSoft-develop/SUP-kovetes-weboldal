@@ -1,6 +1,6 @@
 :root {
-    --bg-gradient-start: #ffffff;
-    --bg-gradient-end: #2564cf;
+    --bg-gradient-start: #f8f9fa;
+    --bg-gradient-end: #eef0f8;
     --header-bg: #2564cf;
     --text-color: #333;
 }
@@ -8,7 +8,7 @@
 body {
     margin: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: #fff;
+    background: linear-gradient(var(--bg-gradient-start), var(--bg-gradient-end));
     color: var(--text-color);
     min-height: 100vh;
     display: flex;
@@ -41,7 +41,7 @@ main {
     margin: 0 auto;
     padding: 20px;
     flex: 1;
-    background: #fff;
+    background: transparent;
 }
 
 .grid {
