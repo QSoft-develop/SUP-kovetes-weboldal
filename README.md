@@ -26,3 +26,5 @@ File neve, Verzió, Feltöltés (kiadás) dátuma, Letöltési méret...
 - A weboldal nem használ cookie-kat, ezért ezzel kapcsolatos figyelmeztetés sem szükséges.
 
 Az aktuális verzió a csempés felületet modern, Windows 8/10 "Metro" stílusú megjelenéssel valósítja meg. A csempék színesek, lekerekítettek és reszponzívan rendeződnek rácsba.
+## Modul konfiguráció
+Az egyes csempék adatait a `modules.php` fájl tartalmazza. Ebben szerepel minden modul kódja, neve, rövid leírása, ikonjának fájlneve és a csempe színe. Az `index.php` ezt a fájlt tölti be, így a modulok adatai egy helyen karbantarthatók.

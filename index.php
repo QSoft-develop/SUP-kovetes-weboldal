@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__.'/RegiForraskod/qsVersion.php';
+$config = require __DIR__.'/modules.php';
 
 function get_ver_info($code) {
     $fix_codes = array('XLS','FIREBIRD','QSBACKUPFDBSERVICE','RUSTDESK','DBCONNECTORAPI');
@@ -28,27 +29,11 @@ function module_files($code) {
         default: return '';
     }
 }
+$modules = $config["modules"];
+$rows = $config["rows"];
+$all_modules = array_merge($rows["large1"], $rows["large2"], $rows["small"]);
 
-$modules = [
-    'SUP' => ['name' => 'SUP', 'desc' => 'Pénzügyi és számviteli modul', 'icon' => 'sup.jpg', 'color' => '#0078d7'],
-    'RAKTAR' => ['name' => 'Raktár', 'desc' => 'Raktári készlet és áruforgalmi modul', 'icon' => 'raktar.jpg', 'color' => '#008272'],
-    'MERLEG' => ['name' => 'Mérleg', 'desc' => 'Mérleg és elemzés modul', 'icon' => 'merleg.jpg', 'color' => '#ff8c00'],
-    'TIP' => ['name' => 'TIP', 'desc' => 'Titkársági Programcsomag', 'icon' => 'tip.jpg', 'color' => '#68217a'],
-    'XLS' => ['name' => 'SUP Xls.NET', 'desc' => 'XLS.NET függvénycsomag', 'icon' => 'xls.jpg', 'color' => '#1b6ac6'],
-    'DBCONNECTOR' => ['name' => 'DbConnector', 'desc' => 'Ütemezett feladatok', 'icon' => 'dbconnector.jpg', 'color' => '#00cc6a'],
-    'DBCONNECTORAPI' => ['name' => 'DbConnector API', 'desc' => 'DbConnector API', 'icon' => 'dbconnectorapi.jpg', 'color' => '#e81123'],
-    'QSBACKUPFDBSERVICE' => ['name' => 'QsFdbBackupService', 'desc' => 'Adatbázismentő', 'icon' => 'qsfdb.png', 'color' => '#0099bc'],
-    'RUSTDESK' => ['name' => 'RustDesk', 'desc' => 'Távmenedzselés', 'icon' => 'tavman.jpg', 'color' => '#da3b01'],
-    'FIREBIRD' => ['name' => 'Firebird SQL', 'desc' => 'Firebird adatbáziskezelő', 'icon' => 'firebird.jpg', 'color' => '#ffb900'],
-    'WEBUPDATE' => ['name' => 'WebUpdate', 'desc' => 'Internetes frissítés', 'icon' => 'webupdate.jpg', 'color' => '#2166b5']
-];
 
-$rows = [
-    'large1' => ['SUP'],
-    'large2' => ['RAKTAR', 'MERLEG', 'TIP'],
-    'small'  => ['XLS', 'DBCONNECTOR', 'DBCONNECTORAPI', 'QSBACKUPFDBSERVICE', 'RUSTDESK', 'FIREBIRD', 'WEBUPDATE']
-];
-$all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
 ?>
 <!DOCTYPE html>
 <html lang="hu">
