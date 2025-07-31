@@ -60,23 +60,25 @@ $all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
 </head>
 <body>
 <header>
-    <img src="RegiForraskod/kepek/suplogo.jpg" alt="SUP logo" class="logo">
-    <h1>SUP követés letöltések</h1>
 </header>
 <main>
-    <div class="hero">
-        <img src="RegiForraskod/kepek/letolteshatter.jpg" alt="Kiemelt frissítés">
-        <div class="hero-text">
-            <h2>Kiemelt frissítés</h2>
-            <p>Frissítse rendszerét a legújabb verzióra!</p>
-        </div>
-    </div>
+    <img src="RegiForraskod/kepek/suplogo.jpg" alt="SUP logo" class="hero-logo">
     <div class="grid">
-        <?php foreach($all_modules as $code): $info = $modules[$code]; list($v,$d,$s)=get_ver_info($code); $file = module_files($code); ?>
+        <?php foreach($all_modules as $code):
+            if($code === 'SUP') {
+        ?>
+        <h2 class="section-title">SUP® Rendszerrel kapcsolatos frissítések letöltése</h2>
+        <?php } elseif($code === 'RUSTDESK') { ?>
+        <h2 class="section-title">Kiegészítő szoftverek letöltése</h2>
+        <?php }
+            $info = $modules[$code];
+            list($v,$d,$s) = get_ver_info($code);
+            $file = module_files($code);
+        ?>
         <div class="tile" style="--tile-color:<?php echo $info['color']; ?>" data-name="<?php echo $info['name']; ?>" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo $file; ?>" data-href="RegiForraskod/FileS/<?php echo $file; ?>">
             <img src="RegiForraskod/kepek/<?php echo $info['icon']; ?>" alt="<?php echo $info['name']; ?>">
             <span class="name"><?php echo $info['name']; ?></span>
-            <span class="version">v<?php echo $v; ?></span>
+            <span class="version"><?php echo $d; ?></span>
             <div class="actions">
                 <a class="btn download-btn" href="RegiForraskod/FileS/<?php echo $file; ?>">Letöltés</a>
                 <button class="btn details-btn">Részletek</button>
@@ -89,10 +91,12 @@ $all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
     <div class="modal-content">
         <span id="modal-close" class="close">&times;</span>
         <h2 class="modal-title"></h2>
-        <p>File: <span class="modal-file"></span></p>
-        <p>Verzió: <span class="modal-version"></span></p>
-        <p>Dátum: <span class="modal-date"></span></p>
-        <p>Méret: <span class="modal-size"></span></p>
+        <ul class="modal-details">
+            <li>File: <span class="modal-file"></span></li>
+            <li>Verzió: <span class="modal-version"></span></li>
+            <li>Dátum: <span class="modal-date"></span></li>
+            <li>Méret: <span class="modal-size"></span></li>
+        </ul>
         <div class="modal-buttons">
             <a class="modal-download" href="#">Letöltés</a>
         </div>
