@@ -51,8 +51,8 @@ header h1 {
 }
 
 main {
-    max-width: 1200px;
-    margin: auto;
+    width: 95%;
+    margin: 0 auto;
     padding: 20px;
 }
 
