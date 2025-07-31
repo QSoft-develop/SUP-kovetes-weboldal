@@ -79,7 +79,7 @@ $all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
         <div class="tile" style="--tile-color:<?php echo $info['color']; ?>" data-name="<?php echo $info['name']; ?>" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo $file; ?>" data-href="RegiForraskod/FileS/<?php echo $file; ?>">
             <img src="RegiForraskod/kepek/<?php echo $info['icon']; ?>" alt="<?php echo $info['name']; ?>">
             <span class="name"><?php echo $info['name']; ?></span>
-            <span class="version">v<?php echo $v; ?></span>
+            <span class="version"><?php echo $d; ?></span>
             <div class="actions">
                 <a class="btn download-btn" href="RegiForraskod/FileS/<?php echo $file; ?>">Letöltés</a>
                 <button class="btn details-btn">Részletek</button>
