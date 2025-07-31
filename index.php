@@ -80,10 +80,6 @@ $all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
             <img src="kepek/<?php echo $info['icon']; ?>" alt="<?php echo $info['name']; ?>">
             <span class="name"><?php echo $info['name']; ?></span>
             <span class="version"><?php echo $d; ?></span>
-            <div class="actions">
-                <a class="btn download-btn" href="RegiForraskod/FileS/<?php echo $file; ?>">Letöltés</a>
-                <button class="btn details-btn">Részletek</button>
-            </div>
         </div>
         <?php endforeach; ?>
     </div>

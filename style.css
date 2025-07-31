@@ -76,6 +76,7 @@ main {
     transition: transform 0.2s, box-shadow 0.2s;
     border-left: 6px solid var(--tile-color, #2564cf);
     color: var(--text-color);
+    cursor: pointer;
 }
 
 .tile:hover {

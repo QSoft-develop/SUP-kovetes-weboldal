@@ -1,7 +1,5 @@
 document.querySelectorAll('.tile').forEach(tile => {
-    const detailsBtn = tile.querySelector('.details-btn');
-    detailsBtn.addEventListener('click', e => {
-        e.preventDefault();
+    tile.addEventListener('click', () => {
         const modal = document.getElementById('modal');
         modal.querySelector('.modal-title').textContent = tile.querySelector('.name').textContent.trim();
         modal.querySelector('.modal-file').textContent = tile.dataset.file;
