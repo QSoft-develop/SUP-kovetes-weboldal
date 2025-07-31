@@ -67,6 +67,24 @@ main {
     color: var(--header-bg);
 }
 
+.alert-toast {
+    grid-column: 1 / -1;
+    background: #fff4ce;
+    border-left: 6px solid #ffb900;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    min-height: 80px;
+}
+
+.alert-toast a {
+    color: var(--header-bg);
+    font-weight: 600;
+}
+
 .tile {
     background: #fff;
     border-radius: 10px;
