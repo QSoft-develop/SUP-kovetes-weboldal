@@ -1,6 +1,6 @@
 :root {
-    --bg-gradient-start: #f8f9fa;
-    --bg-gradient-end: #eef0f8;
+    --bg-gradient-start: #ffffff;
+    --bg-gradient-end: #2564cf;
     --header-bg: #2564cf;
     --text-color: #333;
 }
@@ -41,7 +41,8 @@ main {
     margin: 0 auto;
     padding: 20px;
     flex: 1;
-    background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
+    background: #ffffff;
+    background: linear-gradient(180deg, var(--bg-gradient-start) 4%, var(--bg-gradient-end) 100%);
 }
 
 .grid {
