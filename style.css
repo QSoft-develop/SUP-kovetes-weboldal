@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    background: #fff;
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
     color: #000;
     padding: 20px;
     display: flex;
