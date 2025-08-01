@@ -86,6 +86,10 @@ $all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
             <span class="version"><?php echo $d; ?></span>
         </div>
         <?php endforeach; ?>
+        <a class="tile external" style="--tile-color:#2564cf" href="https://aral.qsoft.hu/d/d11f48cbc61548619ad0/" target="_blank">
+            <img src="kepek/Blue32x32.png" alt="További letöltések">
+            <span class="name">További letöltések</span>
+        </a>
     </div>
 </main>
 <div id="modal" class="modal">

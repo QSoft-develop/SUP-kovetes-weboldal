@@ -98,6 +98,7 @@ main {
     border-left: 6px solid var(--tile-color, #2564cf);
     color: var(--text-color);
     cursor: pointer;
+    text-decoration: none;
 }
 
 .tile:hover {

@@ -1,4 +1,4 @@
-document.querySelectorAll('.tile').forEach(tile => {
+document.querySelectorAll('.tile:not(.external)').forEach(tile => {
     tile.addEventListener('click', () => {
         const modal = document.getElementById('modal');
         modal.querySelector('.modal-title').textContent = tile.querySelector('.name').textContent.trim();
