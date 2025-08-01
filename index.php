@@ -108,8 +108,8 @@ $all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
     </div>
 </div>
 <footer>
-    <p>&copy; QSoft Kft. 1991-<?php echo date('Y'); ?>. Minden jog fenntartva.</p>
-    <p><a href="https://www.sup.hu">Fő weboldal</a> | <a href="https://www.facebook.com/sup.hu">Facebook</a></p>
+    <span class="copyright">&copy; QSoft Kft. 1991-<?php echo date('Y'); ?>. Minden jog fenntartva.</span>
+    <span class="footer-links"><a href="https://www.sup.hu">Fő weboldal</a> | <a href="https://www.facebook.com/sup.hu">Facebook</a></span>
 </footer>
 </body>
 </html>
