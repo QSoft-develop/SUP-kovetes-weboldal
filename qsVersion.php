@@ -1,5 +1,6 @@
 <?php
 
+// Egy adott sor adott indexű elemének visszaadása
 function qsGetIndex($aSor, $aIdx)
 {
   $lSeparator = ";";
@@ -19,6 +20,7 @@ function qsGetIndex($aSor, $aIdx)
   return "";
 }
 
+// Egy verzió fájl adott sorából az indexelt adat kiolvasása
 function qsGetLine($aFileName, $aID, $aIdx)
 {
   $lFile = fopen($aFileName, "r") or die("Az $aFileName llomnyt nem lehet megnyitni!");
@@ -35,16 +37,19 @@ function qsGetLine($aFileName, $aID, $aIdx)
   return "";
 }
 
+// A modul feltöltési dátumának lekérdezése
 function qsGetDate($aFileName, $aID)
 {
   return qsGetLine($aFileName, $aID, 2);
 }
 
+// A modul verziószámának lekérdezése
 function qsGetVersion($aFileName, $aID)
 {
   return qsGetLine($aFileName, $aID, 1);
 }
 
+// Fájlméret átalakítása emberi olvasású formátumba
 function resize_bytes($size)
 {
    $count = 0;
@@ -58,6 +63,7 @@ function resize_bytes($size)
    return $return;
 }
 
+// A megadott fájl méretének lekérése formázva
 function qsGetFileSize($aFileName)
 {
   return resize_bytes(filesize($aFileName));

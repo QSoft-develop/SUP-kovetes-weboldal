@@ -1,11 +1,16 @@
+// Az oldal alapútvonalának meghatározása a history kezeléséhez
 const basePath = window.location.pathname.replace(/[^/]*$/, '');
+// A letöltési csempék összegyűjtése (külső hivatkozások nélkül)
 const tiles = document.querySelectorAll('.tile:not(.external)');
+// A modális ablak referenciája
 const modal = document.getElementById('modal');
 
+// Kiterjesztés eltávolítása fájlnévből
 function removeExtension(file) {
     return file.replace(/\.[^/.]+$/, '');
 }
 
+// Modális ablak megnyitása az adott csempe adataival
 function openModal(tile, updateHistory = true) {
     modal.querySelector('.modal-title').textContent = tile.querySelector('.name').textContent.trim();
     modal.querySelector('.modal-file').textContent = tile.dataset.file;
@@ -20,6 +25,7 @@ function openModal(tile, updateHistory = true) {
     }
 }
 
+// Modális ablak bezárása és az URL visszaállítása
 function closeModal(updateHistory = true) {
     modal.classList.remove('open');
     if (updateHistory) {
@@ -27,19 +33,22 @@ function closeModal(updateHistory = true) {
     }
 }
 
+// Csempe kattintására nyitódjon meg a modális ablak
 tiles.forEach(tile => {
     tile.addEventListener('click', () => openModal(tile));
 });
 const downloadBtn = modal.querySelector('.modal-download');
-const toastDuration = 5000;
+const toastDuration = 5000; // értesítés megjelenítési ideje ms-ben
 let toastContainer = document.getElementById('toast-container');
 
+// Értesítés konténer létrehozása, ha még nem létezik
 if (!toastContainer) {
     toastContainer = document.createElement('div');
     toastContainer.id = 'toast-container';
     document.body.appendChild(toastContainer);
 }
 
+// Rövid ideig megjelenő értesítés létrehozása
 function showToast(message) {
     const toast = document.createElement('div');
     toast.className = 'toast';
@@ -51,11 +60,13 @@ function showToast(message) {
     }, toastDuration);
 }
 
+// Letöltés gomb kezelése
 downloadBtn.addEventListener('click', () => {
     closeModal();
     showToast('Letöltés alatt.');
 });
 
+// Modal bezárása a gomb, háttér vagy ESC billentyű segítségével
 document.getElementById('modal-close').addEventListener('click', () => {
     closeModal();
 });
@@ -66,6 +77,7 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeModal();
 });
 
+// History állapot alapján nyitja meg a megfelelő modált
 function handleState() {
     const segment = decodeURIComponent(window.location.pathname.slice(basePath.length));
     if (segment) {
@@ -78,5 +90,6 @@ function handleState() {
     closeModal(false);
 }
 
+// Az állapotváltozások és az oldal betöltésekor is kezeljük a history-t
 window.addEventListener('popstate', handleState);
 window.addEventListener('DOMContentLoaded', handleState);
