@@ -1,17 +1,20 @@
 <?php
+// A verziók és fájlok kezeléséhez szükséges segédfüggvények betöltése
 require_once __DIR__.'/qsVersion.php';
 
+// Meghatározza egy modul verzióját, dátumát és fájlméretét
 function get_ver_info($code) {
     $fix_codes = array('XLS','FIREBIRD','QSBACKUPFDBSERVICE','RUSTDESK','DBCONNECTORAPI');
     $file = in_array($code, $fix_codes) ? 'sup_fix.ver' : 'sup.ver';
     $path = __DIR__."/{$file}";
     return array(
-        qsGetVersion($path, $code),
-        qsGetDate($path, $code),
-        qsGetFileSize(__DIR__.'/FileS/'.module_files($code))
+        qsGetVersion($path, $code),   // verziószám
+        qsGetDate($path, $code),      // feltöltés dátuma
+        qsGetFileSize(__DIR__.'/FileS/'.module_files($code)) // fájlméret
     );
 }
 
+// A modul kódjának megfelelő telepítőfájl visszaadása
 function module_files($code) {
     switch($code) {
         case 'SUP': return 'SUP_Upd_Setup.exe';
@@ -29,6 +32,7 @@ function module_files($code) {
     }
 }
 
+// A modulok leíró adatait tartalmazó tömb
 $modules = [
     'SUP' => ['name' => 'SUP', 'desc' => 'Pénzügyi és számviteli modul', 'icon' => 'sup.jpg', 'color' => '#0078d7'],
     'RAKTAR' => ['name' => 'Raktár', 'desc' => 'Raktári készlet és áruforgalmi modul', 'icon' => 'raktar.jpg', 'color' => '#008272'],
@@ -43,6 +47,7 @@ $modules = [
     'WEBUPDATE' => ['name' => 'WebUpdate', 'desc' => 'Internetes frissítés', 'icon' => 'webupdate.jpg', 'color' => '#2166b5']
 ];
 
+// A csempék elrendezésének meghatározása
 $rows = [
     'large1' => ['SUP'],
     'large2' => ['RAKTAR', 'MERLEG', 'TIP'],
@@ -51,16 +56,18 @@ $rows = [
 $all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
 ?>
 <!DOCTYPE html>
+<!-- Dinamikus oldal a SUP modulok és kiegészítők letöltéséhez -->
 <html lang="hu">
 <head>
-<meta charset="utf-8">
-<title>SUP követés letöltések</title>
-<link rel="icon" href="kepek/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+    <meta charset="utf-8">
+    <title>SUP követés letöltések</title>
+    <link rel="icon" href="kepek/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 <header>
+    <!-- Fejléc logóval és figyelmeztető szöveggel -->
     <img src="kepek/suplogo.png" alt="SUP logo" class="logo">
     <div class="alert-toast">
         <p>Figyelem!!! A követéseket csak <a href="https://dl.sup.hu/dl/?file=supa016iso" target="_blank">A016</a>-s adatbázisverzióhoz telepítse fel!<br>
@@ -72,26 +79,31 @@ $all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
         <?php foreach($all_modules as $code):
             if($code === 'SUP') {
         ?>
+        <!-- A SUP rendszer moduljaihoz tartozó letöltések -->
         <h2 class="section-title">SUP® Rendszerrel kapcsolatos frissítések letöltése</h2>
         <?php } elseif($code === 'RUSTDESK') { ?>
+        <!-- Kiegészítő szoftverek letöltési szekciója -->
         <h2 class="section-title">Kiegészítő szoftverek letöltése</h2>
         <?php }
             $info = $modules[$code];
             list($v,$d,$s) = get_ver_info($code);
             $file = module_files($code);
         ?>
+        <!-- Egy modulhoz tartozó letöltési csempe -->
         <div class="tile" style="--tile-color:<?php echo $info['color']; ?>" data-name="<?php echo $info['name']; ?>" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo $file; ?>" data-href="FileS/<?php echo $file; ?>">
             <img src="kepek/<?php echo $info['icon']; ?>" alt="<?php echo $info['name']; ?>">
             <span class="name"><?php echo $info['name']; ?></span>
             <span class="version"><?php echo $d; ?></span>
         </div>
         <?php endforeach; ?>
+        <!-- Link további letöltésekhez -->
         <a class="tile external" style="--tile-color:#2564cf" href="https://aral.qsoft.hu/d/d11f48cbc61548619ad0/" target="_blank">
             <img src="kepek/Blue32x32.png" alt="További letöltések">
             <span class="name">További letöltések</span>
         </a>
     </div>
 </main>
+<!-- A részleteket megjelenítő modális ablak -->
 <div id="modal" class="modal">
     <div class="modal-content">
         <span id="modal-close" class="close">&times;</span>
@@ -108,6 +120,7 @@ $all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
     </div>
 </div>
 <footer>
+    <!-- Jogi és kapcsolati információk -->
     <span class="copyright">&copy; QSoft Kft. 1991-<?php echo date('Y'); ?>. Minden jog fenntartva.</span>
     <span class="footer-links"><a href="https://www.sup.hu">Fő weboldal</a> | <a href="https://www.facebook.com/sup.hu">Facebook</a></span>
 </footer>
