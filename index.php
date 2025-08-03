@@ -43,12 +43,19 @@ $modules = [
     'WEBUPDATE' => ['name' => 'WebUpdate', 'desc' => 'Internetes frissítés', 'icon' => 'webupdate.jpg', 'color' => '#2166b5']
 ];
 
-$rows = [
-    'large1' => ['SUP'],
-    'large2' => ['RAKTAR', 'MERLEG', 'TIP'],
-    'small'  => ['XLS', 'DBCONNECTOR', 'DBCONNECTORAPI', 'QSBACKUPFDBSERVICE', 'RUSTDESK', 'FIREBIRD', 'WEBUPDATE']
+$all_modules = [
+    'SUP',
+    'RAKTAR',
+    'MERLEG',
+    'TIP',
+    'XLS',
+    'DBCONNECTOR',
+    'DBCONNECTORAPI',
+    'QSBACKUPFDBSERVICE',
+    'RUSTDESK',
+    'FIREBIRD',
+    'WEBUPDATE'
 ];
-$all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
 ?>
 <!DOCTYPE html>
 <html lang="hu">
