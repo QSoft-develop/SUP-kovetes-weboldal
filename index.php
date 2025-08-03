@@ -46,14 +46,21 @@ $modules = [
     'FIREBIRD' => ['name' => 'Firebird SQL', 'desc' => 'Firebird adatbáziskezelő', 'icon' => 'firebird.jpg', 'color' => '#ffb900'],
     'WEBUPDATE' => ['name' => 'WebUpdate', 'desc' => 'Internetes frissítés', 'icon' => 'webupdate.jpg', 'color' => '#2166b5']
 ];
-
 // A csempék elrendezésének meghatározása
-$rows = [
-    'large1' => ['SUP'],
-    'large2' => ['RAKTAR', 'MERLEG', 'TIP'],
-    'small'  => ['XLS', 'DBCONNECTOR', 'DBCONNECTORAPI', 'QSBACKUPFDBSERVICE', 'RUSTDESK', 'FIREBIRD', 'WEBUPDATE']
+$all_modules = [
+    'SUP',
+    'RAKTAR',
+    'MERLEG',
+    'TIP',
+    'XLS',
+    'DBCONNECTOR',
+    'DBCONNECTORAPI',
+    'QSBACKUPFDBSERVICE',
+    'RUSTDESK',
+    'FIREBIRD',
+    'WEBUPDATE'
+
 ];
-$all_modules = array_merge($rows['large1'], $rows['large2'], $rows['small']);
 ?>
 <!DOCTYPE html>
 <!-- Dinamikus oldal a SUP modulok és kiegészítők letöltéséhez -->
