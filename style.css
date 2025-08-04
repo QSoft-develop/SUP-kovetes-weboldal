@@ -127,18 +127,16 @@ main {
 }
 
 .tile .name {
-    font-weight: 600;
     margin-top: 10px;
+    font-size: 1.6em;
 }
 
 .tile .desc {
     font-size: 0.9em;
-    margin-top: 5px;
 }
 
 .tile .version {
     font-size: 0.9em;
-    margin-top: 2px;
 }
 
 .tile .actions {

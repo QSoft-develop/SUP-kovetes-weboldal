@@ -10,7 +10,7 @@ function get_ver_info($code) {
     return array(
         qsGetVersion($path, $code),   // verziószám
         qsGetDate($path, $code),      // feltöltés dátuma
-        qsGetFileSize(__DIR__.'/FileS/'.module_files($code)) // fájlméret
+        qsGetFileSize(__DIR__.'/../kov/FileS/'.module_files($code)) // fájlméret
     );
 }
 
@@ -34,18 +34,19 @@ function module_files($code) {
 
 // A modulok leíró adatait tartalmazó tömb
 $modules = [
-    'SUP' => ['name' => 'SUP', 'desc' => 'Pénzügyi és számviteli modul', 'icon' => 'sup.jpg', 'color' => '#0078d7'],
-    'RAKTAR' => ['name' => 'Raktár', 'desc' => 'Raktári készlet és áruforgalmi modul', 'icon' => 'raktar.jpg', 'color' => '#008272'],
-    'MERLEG' => ['name' => 'Mérleg', 'desc' => 'Mérleg és elemzés modul', 'icon' => 'merleg.jpg', 'color' => '#ff8c00'],
-    'TIP' => ['name' => 'TIP', 'desc' => 'Titkársági Programcsomag', 'icon' => 'tip.jpg', 'color' => '#68217a'],
-    'XLS' => ['name' => 'SUP Xls.NET', 'desc' => 'XLS.NET függvénycsomag', 'icon' => 'xls.jpg', 'color' => '#1b6ac6'],
-    'DBCONNECTOR' => ['name' => 'DbConnector', 'desc' => 'Ütemezett feladatok', 'icon' => 'dbconnector.jpg', 'color' => '#00cc6a'],
-    'DBCONNECTORAPI' => ['name' => 'DbConnector API', 'desc' => 'DbConnector API', 'icon' => 'dbconnectorapi.jpg', 'color' => '#e81123'],
-    'QSBACKUPFDBSERVICE' => ['name' => 'QsFdbBackupService', 'desc' => 'Adatbázismentő', 'icon' => 'qsfdb.png', 'color' => '#0099bc'],
-    'RUSTDESK' => ['name' => 'RustDesk', 'desc' => 'Távmenedzselés', 'icon' => 'tavman.jpg', 'color' => '#da3b01'],
-    'FIREBIRD' => ['name' => 'Firebird SQL', 'desc' => 'Firebird adatbáziskezelő', 'icon' => 'firebird.jpg', 'color' => '#ffb900'],
-    'WEBUPDATE' => ['name' => 'WebUpdate', 'desc' => 'Internetes frissítés', 'icon' => 'webupdate.jpg', 'color' => '#2166b5']
+    'SUP' => ['name' => 'SUP', 'desc' => 'Pénzügyi és számviteli modul', 'icon' => 'sup.jpg', 'color' => '#9CBCC3'],
+    'RAKTAR' => ['name' => 'RAKTÁR', 'desc' => 'Raktári készlet és áruforgalmi modul', 'icon' => 'raktar.jpg', 'color' => '#547C4E'],
+    'MERLEG' => ['name' => 'MÉRLEG', 'desc' => 'Mérleg és elemzés modul', 'icon' => 'merleg.jpg', 'color' => '#9C67BA'],
+    'TIP' => ['name' => 'TIP', 'desc' => 'Titkársági Programcsomag', 'icon' => 'tip.jpg', 'color' => '#4684DC'],
+    'XLS' => ['name' => 'XLS', 'desc' => 'XLS.NET függvénycsomag', 'icon' => 'xls.jpg', 'color' => '#2FD0DE'],
+    'DBCONNECTOR' => ['name' => 'DBC', 'desc' => 'DbConnector Ütemezett feladatok', 'icon' => 'dbconnector.jpg', 'color' => '#DD9329'],
+    'DBCONNECTORAPI' => ['name' => 'API', 'desc' => 'DbConnector API', 'icon' => 'dbconnectorapi.jpg', 'color' => '#6A6A6A'],
+    'QSBACKUPFDBSERVICE' => ['name' => 'BACKUP', 'desc' => 'QsFdbBackupService Adatbázismentő', 'icon' => 'qsfdb.png', 'color' => '#B00000'],
+    'RUSTDESK' => ['name' => 'RUSTDESK', 'desc' => 'RustDesk Távmenedzselés', 'icon' => 'tavman.jpg', 'color' => '#EB54D0'],
+    'FIREBIRD' => ['name' => 'FIREBIRD', 'desc' => 'Firebird SQL adatbáziskezelő', 'icon' => 'firebird.jpg', 'color' => '#ffb900'],
+    'WEBUPDATE' => ['name' => 'WEBUPD', 'desc' => 'Internetes frissítés', 'icon' => 'webupdate.jpg', 'color' => '#FFF8A9']
 ];
+
 // A csempék elrendezésének meghatározása
 $all_modules = [
     'SUP',
@@ -59,9 +60,9 @@ $all_modules = [
     'RUSTDESK',
     'FIREBIRD',
     'WEBUPDATE'
-
 ];
 ?>
+
 <!DOCTYPE html>
 <!-- Dinamikus oldal a SUP modulok és kiegészítők letöltéséhez -->
 <html lang="hu">
@@ -75,7 +76,6 @@ $all_modules = [
 <body>
 <header>
     <!-- Fejléc logóval és figyelmeztető szöveggel -->
-    <img src="kepek/suplogo.png" alt="SUP logo" class="logo">
     <div class="alert-toast">
         <p>Figyelem!!! A követéseket csak <a href="https://dl.sup.hu/dl/?file=supa016iso" target="_blank">A016</a>-s adatbázisverzióhoz telepítse fel!<br>
         (Csak az adatbázis teljes mentése és a 2019. szeptember 4-i követés CD telepítése után!!!)</p>
@@ -86,23 +86,29 @@ $all_modules = [
         <?php foreach($all_modules as $code):
             if($code === 'SUP') {
         ?>
+		
         <!-- A SUP rendszer moduljaihoz tartozó letöltések -->
         <h2 class="section-title">SUP® Rendszerrel kapcsolatos frissítések letöltése</h2>
         <?php } elseif($code === 'RUSTDESK') { ?>
+
         <!-- Kiegészítő szoftverek letöltési szekciója -->
         <h2 class="section-title">Kiegészítő szoftverek letöltése</h2>
+		
         <?php }
             $info = $modules[$code];
             list($v,$d,$s) = get_ver_info($code);
             $file = module_files($code);
         ?>
+
         <!-- Egy modulhoz tartozó letöltési csempe -->
-        <div class="tile" style="--tile-color:<?php echo $info['color']; ?>" data-name="<?php echo $info['name']; ?>" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo $file; ?>" data-href="FileS/<?php echo $file; ?>">
+        <div class="tile" style="--tile-color:<?php echo $info['color']; ?>" data-name="<?php echo $info['name']; ?>" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo $file; ?>" data-href="../kov/FileS/<?php echo $file; ?>">
             <img src="kepek/<?php echo $info['icon']; ?>" alt="<?php echo $info['name']; ?>">
             <span class="name"><?php echo $info['name']; ?></span>
+            <span class="desc"><?php echo $info['desc']; ?></span>
             <span class="version"><?php echo $d; ?></span>
         </div>
         <?php endforeach; ?>
+
         <!-- Link további letöltésekhez -->
         <a class="tile external" style="--tile-color:#2564cf" href="https://aral.qsoft.hu/d/d11f48cbc61548619ad0/" target="_blank">
             <img src="kepek/Blue32x32.png" alt="További letöltések">
