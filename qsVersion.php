@@ -23,7 +23,7 @@ function qsGetIndex($aSor, $aIdx)
 // Egy verzió fájl adott sorából az indexelt adat kiolvasása
 function qsGetLine($aFileName, $aID, $aIdx)
 {
-  $lFile = fopen($aFileName, "r") or die("Az $aFileName llomnyt nem lehet megnyitni!");
+  $lFile = fopen($aFileName, "r") or die("Az $aFileName állományt nem lehet megnyitni!");
   while (!feof($lFile))
   {
     $lSor = fgets($lFile, 1024);

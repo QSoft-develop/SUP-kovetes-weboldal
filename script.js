@@ -10,13 +10,24 @@ function removeExtension(file) {
     return file.replace(/\.[^/.]+$/, '');
 }
 
+<!-- Link az aral letöltésekhez -->
+document.getElementById('foweb').addEventListener('click', function(e) {
+    if (e.ctrlKey) {
+        this.href = "https://aral.qsoft.hu/d/d11f48cbc61548619ad0";
+    } else {
+        this.href = "https://www.sup.hu";
+    }
+});
+
 // Modális ablak megnyitása az adott csempe adataival
 function openModal(tile, updateHistory = true) {
+    modal.querySelector('.modal-content').style.background = tile.dataset.color;
     modal.querySelector('.modal-title').textContent = tile.querySelector('.name').textContent.trim();
     modal.querySelector('.modal-file').textContent = tile.dataset.file;
     modal.querySelector('.modal-version').textContent = tile.dataset.version;
     modal.querySelector('.modal-date').textContent = tile.dataset.date;
     modal.querySelector('.modal-size').textContent = tile.dataset.size;
+    modal.querySelector('.modal-icon').src = tile.dataset.icon;
     modal.querySelector('.modal-download').href = tile.dataset.href;
     modal.classList.add('open');
     if (updateHistory) {
