@@ -122,8 +122,10 @@ function get_ver_info($code) {
 			if($code === 'SUP') { ?>
         <!-- SUP Rendszerrel kapcsolatos frissítések letöltése -->
         <h2 class="section-title">SUP<sup>&reg;</sup> Rendszerrel kapcsolatos frissítések letöltése</h2>
+			<?php } elseif($code === 'DBCONNECTOR') { ?>
+        <!-- Egyéb modulok letöltési szekciója -->
+        <h2 class="section-title">Egyéb modulok letöltése</h2>
 			<?php } elseif($code === 'RUSTDESK') { ?>
-        <!-- Kiegészítő szoftverek letöltési szekciója -->
         <h2 class="section-title">Kiegészítő szoftverek letöltése</h2>
 			<?php }?>
 
