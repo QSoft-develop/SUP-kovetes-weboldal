@@ -12,10 +12,10 @@ function removeExtension(file) {
 
 <!-- Link az aral letöltésekhez -->
 document.getElementById('foweb').addEventListener('click', function(e) {
-    if (e.ctrlKey) {
+    if (e.altKey) {
         this.href = "https://aral.qsoft.hu/d/d11f48cbc61548619ad0";
     } else {
-        this.href = "https://www.qsoft.hu";
+        //this.href = "https://www.qsoft.hu";
     }
 });
 
