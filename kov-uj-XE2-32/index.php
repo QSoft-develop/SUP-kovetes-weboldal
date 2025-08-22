@@ -92,7 +92,7 @@ function get_ver_info($code) {
     return array(
         qsGetVersion($path, $code),   // verziószám
         qsGetDate($path, $code),      // feltöltés dátuma
-        qsGetFileSize(__DIR__.'./FileS/'.$GLOBALS['modules'][$code]['file']) // fájlméret
+        qsGetFileSize(__DIR__.'/FileS/'.$GLOBALS['modules'][$code]['file']) // fájlméret
     );
 }
 ?>
