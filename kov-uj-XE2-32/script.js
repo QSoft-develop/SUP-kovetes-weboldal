@@ -74,7 +74,7 @@ function showToast(message) {
 // Letöltés gomb kezelése
 downloadBtn.addEventListener('click', () => {
     closeModal();
-    showToast('Letöltés alatt.');
+    showToast('Letöltés folyamatban...');
 });
 
 // Modal bezárása a gomb, háttér vagy ESC billentyű segítségével
