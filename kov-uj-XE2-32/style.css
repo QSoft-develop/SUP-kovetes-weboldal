@@ -1,0 +1,387 @@
+/* Alapszínek és változók */
+:root {
+    --bg-gradient-start: #f8f9fa;
+    --bg-gradient-end: #eef0f8;
+    --header-bg: rgb(156, 188, 195); 
+    --text-color: #333;
+}
+
+/* Alapvető elrendezés az oldal számára */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(var(--bg-gradient-start), var(--bg-gradient-end));
+    color: var(--text-color); 	
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fejléc beállításai */
+header {
+    background: var(--header-bg);
+    color: #FFE;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Fő tartalom területe */
+main {
+    width: 95%;
+    margin: 2dvh auto;
+    flex: 1;
+    background: transparent;
+    align-items: center;
+	
+}
+
+/* Letöltési csempéket tartalmazó rács */
+.grid {
+    display: grid;
+	height: 20dvh;
+	min-height: 160px;
+    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+	margin-right: 5px;
+	margin-top: 1dvh;
+}
+
+.grid2 {
+    height: 15dvh;
+}
+
+.grid3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid a {
+    color: rgb(var(--text-color));
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Kisebb kijelzőkön 2 oszlopos elrendezés */
+@media (max-width: 1200px) {
+    .grid {
+   	    height: 40dvh;
+		min-height: 320px;
+		grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+   	    height: 80dvh;
+		min-height: 640px;
+		grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Szekciócímek megjelenése */
+.section-title {
+    --text-transform: uppercase;
+    grid-column: 1 / -1;
+    font-size: 1.0em;
+    margin: 2dvh 0;
+    color: #666;
+}
+
+/* Figyelmeztető sáv stílusai */
+.alert-toast {
+    background: #fff4ce;
+    border-left: 10px solid #ffb900;
+    border-radius: 13px;
+    padding: 0 15px;
+    font-size: 0.95em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    flex: 1;
+    margin-bottom: 2dvh;
+	margin-right:5px;
+}
+
+.alert-toast a {
+    color: var(--header-bg);
+    font-weight: 600;
+}
+
+/* Letöltési csempe alapstílusok */
+.tile {
+	min-height: 130px;
+	min-width: 250px;
+	background: #fff;
+    border-radius: 15px;
+    border-left: 10px solid rgba(var(--tile-color), 0.3);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: linear-gradient(0deg, rgba(var(--tile-color), 0.6) 10%, rgba(var(--tile-color), 0.25) 60%);
+    color: rgb(var(--text-color));
+    cursor: pointer;
+    text-decoration: none;
+	font-size: 1.0em;
+}
+
+.tile.invisible {
+    opacity: 0;
+}
+
+/* Lebegtetéskor kiemelés */
+.tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    background: linear-gradient(0deg, rgba(var(--tile-color), 0.8) 10%, rgba(var(--tile-color), 0.45) 60%);
+}
+
+.tile img {
+    width: 7dvh;
+    height: 7dvh;
+    border-radius: 10px;
+}
+
+.tile.firstrow img {
+    width: 9dvh;
+    height: 9dvh;
+}
+
+.tile.firstrow {
+    font-size: 1.2em;
+}
+
+.tile .version {
+    font-family: Consolas, sans-serif;
+}
+
+.tile .actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s;
+    font-size: 0.9em;
+}
+
+.download-btn {
+    background: var(--header-bg);
+    color: #fff;
+}
+
+.download-btn:hover {
+    background: #6666ff;
+}
+
+.details-btn {
+    background: #f3f3f3;
+    color: var(--text-color);
+}
+
+.details-btn:hover {
+    background: #e2e2e2;
+}
+
+footer {
+    background: var(--header-bg);
+    color: #ffe;
+    padding: 10px;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer a {
+    color: #ffd;
+    margin: 0 5px;
+}
+
+@media (max-width: 600px) {
+    footer {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/* Modális ablak alapstílusai */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal.open {
+    display: flex;
+}
+
+/* A modális ablak belső tartalmának formázása */
+.modal-content {
+    background: var(--header-bg);
+	filter: brightness(1.15);
+    color: var(--text-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    position: relative;
+    width: 600px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-title {
+	margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+	font-weight: 600;
+}
+
+.modal-icon {
+    margin-top: 5px;
+    margin-right: 17px;
+	width: 100px;
+	float: right;
+    border-radius: 10px;
+}
+
+.modal-content p {
+    margin-left: 100px;
+}
+
+.modal-details {
+    margin-top: 20px;
+    margin-left: 40px;
+    padding-left: 20px;
+}
+
+.modal-file {
+    font-size: 1.4em;
+	margin-top: 20px;
+}
+.modal-size {
+	font-weight: 600;
+}
+.modal-date {
+	font-weight: 600;
+}
+.modal-version {
+	font-weight: 600;
+}
+
+/* Bezáró gomb a modális ablakban */
+.modal-content .close {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #666;
+}
+
+.modal-content .close:hover {
+    color: #000;
+}
+
+/* Gombok elhelyezése a modális ablakban */
+.modal-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Letöltés gomb megjelenése */
+.modal-buttons a {
+    display: inline-block;
+    background: #4477AA;
+    color: #fff;
+    padding: 8px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+hr {
+  border-top: 1px solid rgba(120,120,120,0.2);
+  border-bottom: 0px;
+  margin-bottom: 20px;
+}
+
+/* Mobilbarát elrendezés */
+@media (max-width: 600px) {
+    header {
+        text-align: center;
+    }
+    header .logo {
+        margin-bottom: 10px;
+    }
+    header .alert-toast {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* Értesítések konténere */
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1200;
+}
+
+/* Egyetlen értesítés stílusai */
+.toast {
+    background: #dff6dd;
+    border-left: 4px solid #107c10;
+    color: #107c10;
+    padding: 10px 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    animation: fadeInToast 0.3s forwards;
+}
+
+/* Értesítés eltüntetése animációval */
+.toast.hide {
+    animation: fadeOutToast 0.3s forwards;
+}
+
+/* Értesítés megjelenítési animációja */
+@keyframes fadeInToast {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Értesítés eltűnésének animációja */
+@keyframes fadeOutToast {
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
