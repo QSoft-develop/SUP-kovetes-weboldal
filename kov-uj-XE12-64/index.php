@@ -13,49 +13,49 @@ $modules = [
 		'color-modal' => '156, 188, 195'],
     'RAKTAR' => [
 		'name' => 'RAKTÁR', 
-	    'desc' => 'Raktári készlet és áruforgalmi modul', 
+		'desc' => 'Raktári készlet és áruforgalmi modul', 
 		'file' => 'RA_Upd_Setup.exe',
 		'icon' => 'supra.png', 
 		'color-tile' => '#A2B3A3', 
 		'color-modal' => '103, 148, 103'],
     'MERLEG' => [
 		'name' => 'MÉRLEG', 
-	    'desc' => 'Mérleg és elemzés modul', 
+		'desc' => 'Mérleg és elemzés modul', 
 		'file' => 'LM_Upd_Setup.exe',
 		'icon' => 'merleg.png', 
 		'color-tile' => '#C4A8D7', 
 		'color-modal' => '156, 103, 186'],
     'TIP' => [
 		'name' => 'TIP', 
-	    'desc' => 'Titkársági programcsomag', 
+		'desc' => 'Titkársági programcsomag', 
 		'file' => 'TIP_Upd_Setup.exe',
 		'icon' => 'tip.png', 
 		'color-tile' => '#93B6DB', 
 		'color-modal' => '100, 162, 225'],
     'DBCONNECTOR' => [
 		'name' => 'DBC', 
-	    'desc' => 'DbConnector ütemezett feladatok', 
+		'desc' => 'DbConnector ütemezett feladatok', 
 		'file' => 'DBConnector_Setup.exe',
 		'icon' => 'dbc.png', 
 		'color-tile' => '#D6C6A4', 
 		'color-modal' => '255, 188, 13'],
     'DBCONNECTORAPI' => [
 		'name' => 'API', 
-	    'desc' => 'DbConnector API', 
+		'desc' => 'DbConnector API', 
 		'file' => 'DbConnectorApi.jar',
 		'icon' => 'api.png', 
 		'color-tile' => '#AAAAAA', 
 		'color-modal' => '122, 122, 122'],
     'XLS' => [
 		'name' => 'XLS', 
-	    'desc' => 'XLS.NET függvénycsomag', 
+		'desc' => 'XLS.NET függvénycsomag', 
 		'file' => 'SUP_XLS_NET_Setup.exe',
 		'icon' => 'xls.png', 
 		'color-tile' => '#8cbfd1', 
 		'color-modal' => '65, 204, 232'],
     'QSBACKUPFDBSERVICE' => [
 		'name' => 'BACKUP', 
-	    'desc' => 'QsFdbBackupService adatbázismentő', 
+		'desc' => 'QsFdbBackupService adatbázismentő', 
 		'file' => 'QsBackupFdbService.zip',
 		'icon' => 'backup.png', 
 		'color-tile' => '#fc9fa7', 
@@ -69,21 +69,21 @@ $modules = [
 		'color-modal' => '240, 130, 190'],
     'FIREBIRD' => [
 		'name' => 'FIREBIRD', 
-	    'desc' => 'Firebird SQL adatbáziskezelő', 
+		'desc' => 'Firebird SQL adatbáziskezelő', 
 		'file' => 'FB30_QSoft_Setup.exe',
 		'icon' => 'firebird.png', 
 		'color-tile' => '#CBB083', 
 		'color-modal' => '221, 157, 51'],
     'WEBUPDATE' => [
 		'name' => 'WEBUPD', 
-	    'desc' => 'Internetes frissítés', 
+		'desc' => 'Internetes frissítés', 
 		'file' => 'WebUpdate.exe',
 		'icon' => 'webupd.png', 
 		'color-tile' => '#D8D5B2', 
 		'color-modal' => '255, 248, 169'],
     '32BIT' => [
 		'name' => '32BIT', 
-	    'desc' => '32 bites telepítők...', 
+		'desc' => '32 bites telepítők...', 
 		'file' => '',
 		'html' => 'aa.html',
 		'icon' => 'x32.png', 
@@ -125,45 +125,42 @@ function get_ver_info($code) {
 		<img src="icons/x64.png">
     </div>
 
-		<?php foreach($modules as $code => $info):
+<?php foreach($modules as $code => $info):
 			list($v,$d,$s) = get_ver_info($code);
 			if($code === 'SUP') { ?>
-        <!-- SUP Rendszerrel kapcsolatos frissítések letöltése -->
+	<!-- SUP Rendszerrel kapcsolatos frissítések letöltése -->
+    <div class="section-title">SUP<sup>&reg;</sup> Rendszerrel kapcsolatos frissítések letöltése</div>
     <div class="grid grid4">
-        <h2 class="section-title">SUP<sup>&reg;</sup> Rendszerrel kapcsolatos frissítések letöltése</h2>
-			<?php } elseif($code === 'DBCONNECTOR') { ?>
-        <!-- Egyéb modulok letöltési szekciója -->
+<?php } elseif($code === 'DBCONNECTOR') { ?>
     </div>
+	<!-- Egyéb modulok letöltési szekciója -->
+	<div class="section-title">Egyéb modulok letöltése</div>
     <div class="grid grid4">
-        <h2 class="section-title">Egyéb modulok letöltése</h2>
-			<?php } elseif($code === 'RUSTDESK') { ?>
+<?php } elseif($code === 'RUSTDESK') { ?>
     </div>
+	<div class="section-title">Kiegészítő szoftverek letöltése</div>
     <div class="grid grid4">
-        <h2 class="section-title">Kiegészítő szoftverek letöltése</h2>
-			<?php }?>
-
-        <?php if($code === '32BIT') { ?>
+<?php }?>
+<?php if($code === '32BIT') { ?>
 		<!-- 32BIT letöltési csempe -->
 		<a href="../kov">
-        <div class="tile external" style="--tile-color:<?php echo $info['color-modal']; ?>" data-name="<?php echo $info['name']; ?>" data-version="" data-date="Tovább..." data-size="--" data-file="<?php echo $info['file']; ?>" data-icon="icons/<?php echo $info['icon']; ?>" data-color="<?php echo $info['color-tile']; ?>" data-href="./FileS/<?php echo $info['file']; ?>">
+        <div class="tile external" style="height:90%;--tile-color:<?php echo $info['color-modal']; ?>" data-name="<?php echo $info['name']; ?>" data-version="" data-date="Tovább..." data-size="--" data-file="<?php echo $info['file']; ?>" data-icon="icons/<?php echo $info['icon']; ?>" data-color="<?php echo $info['color-tile']; ?>" data-href="./FileS/<?php echo $info['file']; ?>">
             <img src="icons/<?php echo $info['icon']; ?>" alt="<?php echo $info['name']; ?>">
             <span class="name"><?php echo $info['desc']; ?></span>
             <span class="version"><?php echo $d; ?></span>
         </div>
 		</a>
-        <?php } else { ?>
+<?php } else { ?>
 		
 		<!-- Egy modulhoz tartozó letöltési csempe -->
         <div class="tile<?php echo in_array($code, array('SUP', 'RAKTAR', 'MERLEG', 'TIP')) ? ' firstrow' : '';?>" style="--tile-color:<?php echo $info['color-modal']; ?>" data-name="<?php echo $info['name']; ?>" data-version="<?php echo $v; ?>" data-date="<?php echo $d; ?>" data-size="<?php echo $s; ?>" data-file="<?php echo $info['file']; ?>" data-icon="icons/<?php echo $info['icon']; ?>" data-color="<?php echo $info['color-tile']; ?>" data-href="./FileS/<?php echo $info['file']; ?>">
-            <img src="icons/<?php echo $info['icon']; ?>" alt="<?php echo $info['name']; ?>">
-            <span class="name"><?php echo $info['desc']; ?></span>
-            <span class="version"><?php echo $d; ?></span>
+			<img src="icons/<?php echo $info['icon']; ?>" alt="<?php echo $info['name']; ?>">
+			<span class="name"><?php echo $info['desc']; ?></span>
+			<span class="version"><?php echo $d; ?></span>
         </div>
-        <?php } ?>
-
-        <?php if($info['file'] === '') {echo '</a>';} ?>
-		
-        <?php endforeach; ?>
+<?php } ?>
+<?php if($info['file'] === '') {echo '</a>';} ?>
+<?php endforeach; ?>
     </div>
 </main>
 
