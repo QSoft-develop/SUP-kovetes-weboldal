@@ -53,6 +53,7 @@ main {
 
 .grid3 {
     grid-template-columns: repeat(3, 1fr);
+    height: 15dvh;
 }
 
 .grid a {
