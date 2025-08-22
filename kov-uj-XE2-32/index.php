@@ -109,10 +109,10 @@ function get_ver_info($code) {
 <body>
 <header>SUP<sup>&reg;</sup> Integrált Vállalatirányítási Rendszer követés oldal</header>
 <main>
-    <!-- Fejléc logóval és figyelmeztető szöveggel -->
+    <!-- Fejléc logóval és figyelmeztető szöveggel 
     <div class="alert-toast">
         <p>Figyelem!!! A követéseket csak <a href="https://dl.sup.hu/dl/?file=supa016iso" target="_blank">A016</a>-s adatbázisverzióhoz telepítse fel!<br></p>
-    </div>
+    </div>-->
 
 <?php foreach($modules as $code => $info):
 		list($v,$d,$s) = get_ver_info($code);
