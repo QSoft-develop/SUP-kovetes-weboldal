@@ -93,7 +93,7 @@ $modules = [
 
 // Meghatározza egy modul verzióját, dátumát és fájlméretét
 function get_ver_info($code) {
-    $fix_codes = array('XLS','FIREBIRD','BACKUP','RUSTDESK','DBCONNECTORAPI');
+    $fix_codes = array('XLS','FIREBIRD','BACKUP','RUSTDESK','DBCONNECTORAPI','QSBACKUPFDBSERVICE');
     $file = in_array($code, $fix_codes) ? 'sup_fix.ver' : 'sup.ver';
     $path = __DIR__."/{$file}";
 	

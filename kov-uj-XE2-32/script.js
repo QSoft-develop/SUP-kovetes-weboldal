@@ -13,7 +13,7 @@ function removeExtension(file) {
 <!-- Link az aral letöltésekhez -->
 document.getElementById('foweb').addEventListener('click', function(e) {
     if (e.altKey) {
-        this.href = "https://aral.qsoft.hu/d/d11f48cbc61548619ad0";
+        this.href = "https://aral.qsoft.hu/d/c458ab56a5db4bbe86b0/";
     } else {
         //this.href = "https://www.qsoft.hu";
     }
