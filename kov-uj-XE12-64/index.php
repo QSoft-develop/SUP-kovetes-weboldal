@@ -16,50 +16,57 @@ $modules = [
 		'desc' => 'Raktári készlet és áruforgalmi modul', 
 		'file' => 'RA_Upd_Setup.exe',
 		'icon' => 'supra.png', 
-		'color-tile' => '#A2B3A3', 
-		'color-modal' => '103, 148, 103'],
+		'color-tile' => '#8AA68B', 
+		'color-modal' => '103, 160, 110'],
     'MERLEG' => [
 		'name' => 'MÉRLEG', 
 		'desc' => 'Mérleg és elemzés modul', 
 		'file' => 'LM_Upd_Setup.exe',
 		'icon' => 'merleg.png', 
-		'color-tile' => '#C4A8D7', 
-		'color-modal' => '156, 103, 186'],
+		'color-tile' => '#92C8CA', 
+		'color-modal' => '110, 180, 165'],
     'TIP' => [
 		'name' => 'TIP', 
 		'desc' => 'Titkársági programcsomag', 
 		'file' => 'TIP_Upd_Setup.exe',
 		'icon' => 'tip.png', 
-		'color-tile' => '#93B6DB', 
-		'color-modal' => '100, 162, 225'],
+		'color-tile' => '#99BBE0', 
+		'color-modal' => '100, 170, 200'],
     'DBCONNECTOR' => [
 		'name' => 'DBC', 
 		'desc' => 'DbConnector ütemezett feladatok', 
 		'file' => 'DBConnector_Setup.exe',
 		'icon' => 'dbc.png', 
-		'color-tile' => '#D6C6A4', 
+		'color-tile' => '#F0BD84', 
 		'color-modal' => '255, 188, 13'],
     'DBCONNECTORAPI' => [
 		'name' => 'API', 
 		'desc' => 'DbConnector API', 
 		'file' => 'DbConnectorApi.jar',
 		'icon' => 'api.png', 
-		'color-tile' => '#AAAAAA', 
-		'color-modal' => '122, 122, 122'],
-    'XLS' => [
-		'name' => 'XLS', 
-		'desc' => 'XLS.NET függvénycsomag', 
-		'file' => 'SUP_XLS_NET_Setup.exe',
-		'icon' => 'xls.png', 
-		'color-tile' => '#8cbfd1', 
-		'color-modal' => '65, 204, 232'],
+		'color-tile' => '#D8D5B2', 
+		'color-modal' => '252, 244, 149'],
     'QSBACKUPFDBSERVICE' => [
 		'name' => 'BACKUP', 
 		'desc' => 'QsFdbBackupService adatbázismentő', 
 		'file' => 'QsBackupFdbService.zip',
 		'icon' => 'backup.png', 
-		'color-tile' => '#fc9fa7', 
-		'color-modal' => '212, 30, 45'],
+		'color-tile' => '#AAAAAA', 
+		'color-modal' => '182, 182, 182'],
+    'XLS' => [
+		'name' => 'XLS', 
+		'desc' => 'XLS.NET függvénycsomag', 
+		'file' => 'SUP_XLS_NET_Setup.exe',
+		'icon' => 'xls.png', 
+		'color-tile' => '#B8A891', 
+		'color-modal' => '179, 158, 129'],
+    'FIREBIRD' => [
+		'name' => 'FIREBIRD', 
+		'desc' => 'Firebird SQL adatbáziskezelő', 
+		'file' => 'FB30_QSoft_Setup.exe',
+		'icon' => 'firebird.png', 
+		'color-tile' => '#EF8B8B', 
+		'color-modal' => '240, 70, 70'],
     'RUSTDESK' => [
 		'name' => 'RUSTDESK', 
 		'desc' => 'RustDesk távmenedzselés', 
@@ -67,20 +74,13 @@ $modules = [
 		'icon' => 'rustdesk.png', 
 		'color-tile' => '#EFABDC', 
 		'color-modal' => '240, 130, 190'],
-    'FIREBIRD' => [
-		'name' => 'FIREBIRD', 
-		'desc' => 'Firebird SQL adatbáziskezelő', 
-		'file' => 'FB30_QSoft_Setup.exe',
-		'icon' => 'firebird.png', 
-		'color-tile' => '#CBB083', 
-		'color-modal' => '221, 157, 51'],
     'WEBUPDATE' => [
 		'name' => 'WEBUPD', 
 		'desc' => 'Internetes frissítés', 
 		'file' => 'WebUpdate.exe',
 		'icon' => 'webupd.png', 
-		'color-tile' => '#D8D5B2', 
-		'color-modal' => '255, 248, 169'],
+		'color-tile' => '#C4A8D7', 
+		'color-modal' => '156, 103, 186'],
     '32BIT' => [
 		'name' => '32BIT', 
 		'desc' => '32 bites telepítők...', 
@@ -88,7 +88,7 @@ $modules = [
 		'html' => 'aa.html',
 		'icon' => 'x32.png', 
 		'color-tile' => '#FFFFFF', 
-		'color-modal' => '220, 220, 180']
+		'color-modal' => '240, 240, 240']
 ];
 
 // Meghatározza egy modul verzióját, dátumát és fájlméretét
@@ -135,11 +135,11 @@ function get_ver_info($code) {
     </div>
 	<!-- Egyéb modulok letöltési szekciója -->
 	<div class="section-title">Egyéb modulok letöltése</div>
-    <div class="grid grid4">
-<?php } elseif($code === 'RUSTDESK') { ?>
+    <div class="grid grid2">
+<?php } elseif($code === 'FIREBIRD') { ?>
     </div>
 	<div class="section-title">Kiegészítő szoftverek letöltése</div>
-    <div class="grid grid4">
+    <div class="grid grid2">
 <?php }?>
 <?php if($code === '32BIT') { ?>
 		<!-- 32BIT letöltési csempe -->
