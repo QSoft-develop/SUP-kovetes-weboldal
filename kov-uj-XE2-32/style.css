@@ -38,7 +38,7 @@ main {
 /* Letöltési csempéket tartalmazó rács */
 .grid {
     display: grid;
-    height: 20dvh;
+    height: 26dvh;
     min-height: 160px;
     gap: 15px;
     grid-template-columns: repeat(4, 1fr);
